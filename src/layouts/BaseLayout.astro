@@ -1,0 +1,212 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  canonical?: string;
+}
+
+const { title, description, ogImage, canonical } = Astro.props;
+
+const canonicalURL = canonical
+  ? new URL(canonical, Astro.site)
+  : new URL(Astro.url.pathname, Astro.site);
+
+const ogImageURL = ogImage
+  ? new URL(ogImage, Astro.site)
+  : new URL('/og-card.png', Astro.site);
+---
+<!DOCTYPE html>
+<html lang="en-IN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f1117" />
+    <link rel="icon" type="image/png" href="/logo512.png" />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CreatorKhata" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <a href={import.meta.env.BASE_URL} class="brand">
+        <span class="brand-dot"></span>
+        <span class="brand-name">CreatorKhata</span>
+        <span class="brand-slash">/</span>
+        <span class="brand-section">Blog</span>
+      </a>
+      <nav class="site-nav">
+        <a href="https://creatorkhata.com">App</a>
+        <a href="https://creatorkhata.com/login" class="nav-cta">Sign in</a>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>© {new Date().getFullYear()} CreatorKhata</span>
+        <nav>
+          <a href="https://creatorkhata.com">App</a>
+          <a href="https://creatorkhata.com/terms">Terms</a>
+          <a href="https://creatorkhata.com/privacy">Privacy</a>
+        </nav>
+      </div>
+    </footer>
+
+    <style is:global>
+      :root {
+        --ink:        #0f1117;
+        --green:      #1a7a4a;
+        --green-light:#4dba7a;
+        --green-pale: #eef7f2;
+        --yellow:     #d97706;
+        --white:      #ffffff;
+        --off-white:  #f8f9fb;
+        --surface-2:  #f1f3f6;
+        --border:     #e5e7eb;
+        --muted:      #6b7280;
+        --subtle:     #9ca3af;
+        --r-md:       10px;
+        --r-lg:       16px;
+        --r-full:     999px;
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: 'DM Sans', system-ui, sans-serif;
+        background: var(--off-white);
+        color: var(--ink);
+        -webkit-font-smoothing: antialiased;
+        line-height: 1.65;
+      }
+
+      .site-header {
+        display: flex; align-items: center; justify-content: space-between;
+        max-width: 1100px; margin: 0 auto;
+        padding: 1.5rem 1.5rem 1rem;
+      }
+      .brand {
+        display: inline-flex; align-items: center; gap: 0.5rem;
+        text-decoration: none; color: var(--ink);
+        font-family: 'Syne', sans-serif; font-weight: 800;
+        font-size: 1.15rem; letter-spacing: -0.02em;
+      }
+      .brand-dot {
+        width: 10px; height: 10px; border-radius: 999px; background: var(--green);
+      }
+      .brand-slash { color: var(--subtle); font-weight: 400; }
+      .brand-section { color: var(--green); }
+      .site-nav { display: flex; gap: 1rem; align-items: center; font-size: 0.92rem; }
+      .site-nav a { color: var(--muted); text-decoration: none; font-weight: 500; }
+      .site-nav a:hover { color: var(--ink); }
+      .site-nav .nav-cta {
+        background: var(--ink); color: white; padding: 0.5rem 0.95rem;
+        border-radius: var(--r-md);
+      }
+      .site-nav .nav-cta:hover { background: #1f2937; color: white; }
+
+      .site-main { max-width: 760px; margin: 0 auto; padding: 1rem 1.5rem 4rem; }
+
+      .site-footer {
+        border-top: 1px solid var(--border);
+        margin-top: 4rem; padding: 2rem 1.5rem;
+        background: white;
+      }
+      .footer-inner {
+        max-width: 1100px; margin: 0 auto;
+        display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+        color: var(--muted); font-size: 0.88rem;
+      }
+      .footer-inner nav { display: flex; gap: 1.25rem; }
+      .footer-inner a { color: var(--muted); text-decoration: none; }
+      .footer-inner a:hover { color: var(--ink); }
+
+      h1, h2, h3 {
+        font-family: 'Syne', sans-serif; letter-spacing: -0.02em; color: var(--ink);
+      }
+      h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.15; margin-top: 0.5rem; }
+      h2 { font-size: 1.6rem; font-weight: 700; margin: 2.5rem 0 0.75rem; }
+      h3 { font-size: 1.2rem; font-weight: 700; margin: 1.75rem 0 0.5rem; }
+      p  { margin-bottom: 1.1rem; color: #1f2330; }
+      ul, ol { margin: 0 0 1.1rem 1.25rem; }
+      li { margin-bottom: 0.35rem; }
+      a  { color: var(--green); }
+      blockquote {
+        border-left: 4px solid var(--green); background: var(--green-pale);
+        padding: 0.85rem 1.1rem; margin: 1.25rem 0;
+        border-radius: 0 var(--r-md) var(--r-md) 0;
+        color: #1f2330;
+      }
+      blockquote p:last-child { margin-bottom: 0; }
+      code {
+        background: var(--surface-2); padding: 0.15rem 0.4rem;
+        border-radius: 6px; font-size: 0.88em;
+        font-family: 'JetBrains Mono', 'Consolas', monospace;
+      }
+      table {
+        width: 100%; border-collapse: collapse; margin: 1.25rem 0;
+        font-size: 0.92rem;
+      }
+      th, td { padding: 0.65rem 0.85rem; text-align: left; border-bottom: 1px solid var(--border); }
+      th { background: var(--surface-2); font-weight: 600; }
+
+      .post-meta {
+        display: flex; gap: 0.75rem; color: var(--muted);
+        font-size: 0.88rem; margin: 0.5rem 0 1.5rem;
+      }
+      .post-meta .dot { color: var(--subtle); }
+      .tag {
+        display: inline-block; background: var(--green-pale); color: var(--green);
+        padding: 0.15rem 0.6rem; border-radius: var(--r-full);
+        font-size: 0.75rem; font-weight: 600; text-decoration: none;
+      }
+      .tag + .tag { margin-left: 0.35rem; }
+
+      .cta-card {
+        margin: 2.5rem 0; padding: 1.5rem; border-radius: var(--r-lg);
+        background: var(--ink); color: white;
+      }
+      .cta-card h3 { color: white; margin-top: 0; }
+      .cta-card p { color: #c8cdd6; }
+      .cta-card .btn {
+        display: inline-block; background: var(--green); color: white;
+        padding: 0.65rem 1.1rem; border-radius: var(--r-md);
+        text-decoration: none; font-weight: 600;
+      }
+      .cta-card .btn:hover { background: #156038; }
+
+      @media (max-width: 720px) {
+        h1 { font-size: 1.9rem; }
+        h2 { font-size: 1.35rem; }
+        .site-header { padding: 1rem 1rem 0.75rem; }
+        .site-main { padding: 0.5rem 1rem 3rem; }
+      }
+    </style>
+  </body>
+</html>

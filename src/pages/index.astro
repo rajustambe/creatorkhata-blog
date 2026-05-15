@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const allPosts = (await getCollection('posts', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const dateFmt = (d: Date) =>
+  d.toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+<BaseLayout
+  title="CreatorKhata Blog — Tax, GST, TDS & Business Guides for Indian Creators"
+  description="Practical tax, GST, TDS and business guides for Indian YouTubers, influencers and freelance content creators. Written for creators, not accountants."
+>
+  <section class="hero">
+    <h1>The CreatorKhata Blog.</h1>
+    <p class="hero-sub">
+      Practical guides on tax, GST, TDS, brand deals and the business of being
+      a creator in India — written for creators, not accountants.
+    </p>
+  </section>
+
+  <section class="post-list">
+    {allPosts.map(post => (
+      <article class="post-card">
+        <a href={`${import.meta.env.BASE_URL}/${post.slug}`} class="post-card-link">
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+          <div class="post-card-meta">
+            <span>{dateFmt(post.data.pubDate)}</span>
+            <span class="dot">·</span>
+            <span>{post.data.tags[0] ?? 'Guide'}</span>
+          </div>
+        </a>
+      </article>
+    ))}
+  </section>
+
+  <style>
+    .hero { padding: 1.5rem 0 0.5rem; }
+    .hero-sub {
+      color: var(--muted); font-size: 1.05rem; max-width: 600px;
+      margin-top: 0.75rem;
+    }
+    .post-list { margin-top: 2rem; }
+    .post-card {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 0;
+    }
+    .post-card:last-child { border-bottom: 1px solid var(--border); }
+    .post-card-link { display: block; text-decoration: none; color: inherit; }
+    .post-card h2 {
+      font-size: 1.35rem; margin: 0 0 0.4rem; color: var(--ink);
+      transition: color 0.15s;
+    }
+    .post-card-link:hover h2 { color: var(--green); }
+    .post-card p { color: var(--muted); margin-bottom: 0.5rem; }
+    .post-card-meta {
+      display: flex; gap: 0.5rem; color: var(--subtle);
+      font-size: 0.85rem;
+    }
+    .post-card-meta .dot { color: var(--subtle); }
+  </style>
+</BaseLayout>

@@ -1,0 +1,63 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', ({ data }) => !data.draft);
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props { post: CollectionEntry<'posts'> }
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const dateFmt = (d: Date) =>
+  d.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+<BaseLayout
+  title={`${post.data.title} — CreatorKhata`}
+  description={post.data.description}
+  ogImage={post.data.ogImage}
+>
+  <article class="post">
+    <header class="post-header">
+      {post.data.tags[0] && <span class="tag">{post.data.tags[0]}</span>}
+      <h1>{post.data.title}</h1>
+      <div class="post-meta">
+        <span>{dateFmt(post.data.pubDate)}</span>
+        <span class="dot">·</span>
+        <span>{post.data.author}</span>
+        {post.data.updatedDate && (
+          <>
+            <span class="dot">·</span>
+            <span>Updated {dateFmt(post.data.updatedDate)}</span>
+          </>
+        )}
+      </div>
+    </header>
+
+    <div class="post-body">
+      <Content />
+    </div>
+
+    <aside class="cta-card">
+      <h3>Stop spreadsheets — try CreatorKhata.</h3>
+      <p>
+        Invoicing with GST + TDS auto-calculated, brand-deal pipeline, and
+        payment tracking — built for Indian creators.
+      </p>
+      <a href="https://creatorkhata.com" class="btn">Open the app</a>
+    </aside>
+  </article>
+
+  <style>
+    .post-header { margin-bottom: 1.5rem; }
+    .post-header .tag { margin-bottom: 0.75rem; }
+    .post-body :global(p:first-of-type) {
+      font-size: 1.1rem; color: #1f2330;
+    }
+  </style>
+</BaseLayout>
