@@ -10,6 +10,22 @@ GST is the threshold every Indian creator hits eventually. It usually arrives qu
 
 This post covers when GST kicks in for creators, how the export-of-services rule turns AdSense from a tax burden into a refund, and what an invoice has to look like after registration.
 
+## See it work: a GST-compliant invoice in 90 seconds
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin:1.5rem 0;border-radius:8px;background:#000;">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/EdNHw4kCEhI?start=29&rel=0"
+    title="CreatorKhata Demo — GST invoices for Indian creators"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+  ></iframe>
+</div>
+
+*Skip to 0:29 for the GST invoice flow. Mamaearth (Karnataka) → you (Maharashtra) → 18% IGST auto-applied because it's inter-state, brand's GSTIN pulled in, tax-compliant PDF downloaded ready to email.*
+
 ## The ₹20 lakh trigger
 
 You **must** register for GST once your aggregate turnover in a financial year crosses:
@@ -86,6 +102,10 @@ For a ₹50,000 brand deal with a Mumbai brand and a Delhi creator:
 - **Invoice total: ₹59,000**
 
 Brand pays ₹59,000 to you. They claim ₹9,000 back from the government as input credit. You deposit ₹9,000 to the government in next month's return. Net to you: ₹50,000 — same as pre-GST, but now you're also able to claim input credit on your own expenses.
+
+![CreatorKhata GST Invoices page — six brand-deal invoices including Mamaearth ₹59,000 (Base ₹50,000 + GST 18%), Nykaa ₹88,500, boAt ₹1,41,600, with paid/draft/overdue status badges](/blog/images/posts/gst-invoices-list.jpg)
+
+*The GST Invoices page auto-computes CGST+SGST (intra-state) or IGST (inter-state) from the Place of Supply, attaches the brand's saved GSTIN, and exports the GSTR-1 row as CSV at month-end — no manual reconciliation.*
 
 ## TDS still applies — they stack
 

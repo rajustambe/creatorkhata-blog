@@ -10,6 +10,22 @@ If you've ever received a brand-deal payment that looked smaller than what was q
 
 This guide covers the three places TDS shows up for Indian YouTubers and creators — brand deals, AdSense, affiliate income — and exactly how to get it back at tax-filing time.
 
+## See it work: TDS tracking from a ₹50,000 brand deal to ITR claim
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin:1.5rem 0;border-radius:8px;background:#000;">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/EdNHw4kCEhI?rel=0"
+    title="CreatorKhata Demo — TDS tracking for Indian creators"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+  ></iframe>
+</div>
+
+*3-minute walkthrough — the TDS Tracker section starts at 1:05. Watch the section-194J 10% deduction get computed live, why Form 16A reconciliation matters, and how your FY-wise claimable total surfaces as a single number ready for your CA.*
+
 ## Quick summary
 
 | Income source | Who deducts | Section | Rate |
@@ -44,6 +60,10 @@ You quote ₹50,000 for a sponsored Instagram reel. The brand:
 - Net received in your bank: **₹54,000** (= ₹59,000 − ₹5,000)
 
 That ₹5,000 isn't gone. It's sitting against your PAN with the government. At ITR time, you'll see it in Form 26AS and claim it back.
+
+![Add Payment Record in CreatorKhata's TDS Tracker — invoice ₹50,000 under section 194J(b) auto-computes ₹5,000 TDS deducted and ₹45,000 net receivable in real time](/blog/images/posts/tds-tracker-add-payment.jpg)
+
+*The TDS Tracker computes the deduction live as you enter the invoice amount — pick the section (194J / 194H / 194C / 192 / 195 — all 20+ sections covered), and the "You Receive" figure matches what should land in your bank.*
 
 > **Why 10% and not on the GST?** TDS under 194J is calculated on the *service value* before GST. The brand should never deduct TDS on the GST portion. If your invoice doesn't separate them cleanly, the brand's accounts team will sometimes deduct on the total — which is wrong, and you'll have to argue for a credit note.
 

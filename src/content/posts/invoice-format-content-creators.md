@@ -10,6 +10,22 @@ The brand finance team has rejected your invoice. Twice. Each rejection costs yo
 
 This post is a clean, GST-and-TDS-compliant invoice format you can copy. Then it covers the four fields that most creator invoices get wrong and the three things you can do to cut payment time roughly in half.
 
+## See it generated: a CK-2026 invoice in real time
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin:1.5rem 0;border-radius:8px;background:#000;">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/EdNHw4kCEhI?start=29&rel=0"
+    title="CreatorKhata Demo — invoice generation for Indian creators"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+    loading="lazy"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;"
+  ></iframe>
+</div>
+
+*Skip to 0:29 to watch the invoice get built — brand GSTIN auto-attached, Place of Supply computed from the brand's state (so CGST+SGST vs IGST is automatic), sequential numbering enforced, single-click PDF export. Every field in the template below is filled by the form.*
+
 ## Template — copy this
 
 ```
@@ -70,6 +86,10 @@ For Raju Tambe                          Signature: _____________
 ```
 
 That's a complete invoice. Every line is there because either (a) the GST Rules require it, (b) the brand's AP system rejects invoices without it, or (c) it prevents a TDS-reconciliation argument later.
+
+![CreatorKhata Invoices dashboard — six brand-deal invoices with sequential numbering CK-2026-001 through CK-2026-006, status badges (Paid, Draft, Overdue), and one-click PDF download per row](/blog/images/posts/gst-invoices-list.jpg)
+
+*Sequential numbering (CK-2026-001, 002, 003…) is enforced automatically — no gaps possible, which is one of the most common rejection reasons listed below. The download icon ships a tax-compliant PDF ready to email the brand.*
 
 ## The four fields creators almost always get wrong
 
