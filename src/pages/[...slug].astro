@@ -16,6 +16,12 @@ const { Content } = await post.render();
 
 const dateFmt = (d: Date) =>
   d.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+
+// UTM tagging so Vercel Analytics on creatorkhata.com can attribute which
+// blog post + which CTA position (top vs bottom) drove the click.
+const utmBase   = `?utm_source=blog&utm_campaign=${encodeURIComponent(post.slug)}`;
+const ctaTopUrl = `https://creatorkhata.com/${utmBase}&utm_medium=cta_top`;
+const ctaBotUrl = `https://creatorkhata.com/${utmBase}&utm_medium=cta_bottom`;
 ---
 <BaseLayout
   title={`${post.data.title} — CreatorKhata`}
@@ -39,6 +45,13 @@ const dateFmt = (d: Date) =>
       </div>
     </header>
 
+    <a href={ctaTopUrl} class="cta-banner">
+      <span class="cta-banner-text">
+        Built for Indian creators — invoice with GST + TDS, track brand-deal payments in one app.
+      </span>
+      <span class="cta-banner-action">Try free →</span>
+    </a>
+
     <div class="post-body">
       <Content />
     </div>
@@ -49,7 +62,7 @@ const dateFmt = (d: Date) =>
         Invoicing with GST + TDS auto-calculated, brand-deal pipeline, and
         payment tracking — built for Indian creators.
       </p>
-      <a href="https://creatorkhata.com" class="btn">Open the app</a>
+      <a href={ctaBotUrl} class="btn">Open the app</a>
     </aside>
   </article>
 
@@ -58,6 +71,33 @@ const dateFmt = (d: Date) =>
     .post-header .tag { margin-bottom: 0.75rem; }
     .post-body :global(p:first-of-type) {
       font-size: 1.1rem; color: #1f2330;
+    }
+    .cta-banner {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap;
+      margin: 0 0 2rem;
+      padding: 0.85rem 1.1rem;
+      background: linear-gradient(135deg, #fff1f2, #fef3c7);
+      border: 1px solid #fcd34d;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #0f172a;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+    .cta-banner:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(15,23,42,0.08);
+    }
+    .cta-banner-text { flex: 1 1 auto; }
+    .cta-banner-action {
+      font-weight: 700;
+      color: #b45309;
+      white-space: nowrap;
+    }
+    @media (max-width: 540px) {
+      .cta-banner { padding: 0.75rem 0.95rem; font-size: 0.9rem; }
     }
   </style>
 </BaseLayout>
