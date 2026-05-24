@@ -6,6 +6,8 @@ tags: ["CPV pricing", "brand deals", "Indian creators", "influencer marketing"]
 author: "CreatorKhata"
 ---
 
+*Heads up: some links below are affiliate. Using them helps us keep the blog free. We only recommend tools we've actually used or trust.*
+
 You've just hit 10,000 followers on Instagram and you're getting your first brand deal inquiry. The brand is offering you Rs 5,000 for a sponsored post, but you're not sure if it's a fair price. You've heard of the CPV (cost per view) method, but you're not sure how to apply it to your situation. 
 
 You start by researching industry CPV ranges for your niche. You find that for tech creators, the CPV range is Rs 2-5, while for finance creators, it's Rs 5-10. As a lifestyle creator, your CPV range is Rs 1-3. You start to wonder how you can anchor your price to the higher end of this range.
@@ -127,6 +129,12 @@ Here's a step-by-step procedure to increase your engagement rates:
 
 ## How CreatorKhata helps
 The Rate Card Calculator in CreatorKhata converts your average views into per-platform pricing using these India-specific CPV bands by niche. Enter your niche and your last-10-post view average, and you get a clean rate card across Instagram Reel, Story, Post, Carousel, and YouTube formats — ready to drop into your media kit or paste into a brand-outreach email. Your first quote is anchored to market data, not to gut feel, and you can A/B different positions inside the band as your engagement signals improve. Pairs with [a contract template that locks the agreed price](/blog/invoice-format-content-creators) before delivery starts. [Try CreatorKhata free](https://creatorkhata.com).
+
+## Tools that help with this
+
+- **[CreatorKhata](https://creatorkhata.com/?utm_source=blog&utm_medium=affiliate&utm_campaign=price-first-brand-deal-cpv-method)** — Build a media kit + rate card based on your CPV, send to brands directly, track every deal from pitch to payment
+- **[vidIQ](https://vidiq.com/creatorkhata?utm_campaign=price-first-brand-deal-cpv-method)** — Track which content types deliver the highest views so you can quote CPV with confidence
+- **[Creator gear on Amazon India](https://www.amazon.in/s?k=youtuber+kit&tag=creatorkhata2-21&utm_campaign=price-first-brand-deal-cpv-method)** — Cameras, mics, lighting, and accessories for content creators
 
 ## A note on accuracy
 CPV ranges are market estimates that drift quarter-to-quarter. Cross-check against current rates with a peer in your niche or your manager before quoting on a high-value deal.

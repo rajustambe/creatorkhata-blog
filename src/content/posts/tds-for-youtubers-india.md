@@ -6,6 +6,8 @@ tags: ["Tax", "TDS", "Compliance"]
 author: "CreatorKhata"
 ---
 
+*Heads up: some links below are affiliate. Using them helps us keep the blog free. We only recommend tools we've actually used or trust.*
+
 If you've ever received a brand-deal payment that looked smaller than what was quoted, you've already met TDS. **Tax Deducted at Source** is the system the Indian government uses to collect income tax in advance — the brand (or platform) holds back a percentage and deposits it against your PAN before the rest reaches your bank.
 
 This guide covers the three places TDS shows up for Indian YouTubers and creators — brand deals, AdSense, affiliate income — and exactly how to get it back at tax-filing time.
@@ -141,6 +143,12 @@ A clean brand-deal invoice has both, and they don't cancel each other out. We'll
 Every brand-deal invoice CreatorKhata generates calculates the TDS deduction line automatically and surfaces the net-receivable up front — so you know what's actually landing in your account before you sign the deal. Your TDS dashboard mirrors what *should* appear on 26AS, so when the brand short-deposits, you spot it within days rather than at tax filing.
 
 If you've been tracking deals in a spreadsheet, you're spending more time on bookkeeping than on content. [Try the app](https://creatorkhata.com).
+
+## Tools that help with this
+
+- **[CreatorKhata](https://creatorkhata.com/?utm_source=blog&utm_medium=affiliate&utm_campaign=tds-for-youtubers-india)** — All-in-one business app for Indian creators — invoices, brand-deal contracts, payment tracking, GST & TDS-ready
+- **[Razorpay](https://rzp.io/rzp/9qjLNw9k?utm_campaign=tds-for-youtubers-india)** — Accept brand-deal payments with auto-generated GST invoices and UPI/card/international support
+- **[Tax & business books on Amazon India](https://www.amazon.in/s?k=indian+tax+freelancer+book&tag=creatorkhata2-21&utm_campaign=tds-for-youtubers-india)** — Reference books on Indian taxation, freelancer compliance, and small-business law
 
 ---
 

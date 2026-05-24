@@ -6,6 +6,8 @@ tags: ["Tax", "GST", "Compliance"]
 author: "CreatorKhata"
 ---
 
+*Heads up: some links below are affiliate. Using them helps us keep the blog free. We only recommend tools we've actually used or trust.*
+
 GST is the threshold every Indian creator hits eventually. It usually arrives quietly — your brand-deal income crosses ₹20 lakh for the year, and within 30 days you're legally required to register, charge GST on invoices, and file monthly returns. Miss the registration and the penalty is the GST you *should* have collected, paid out of your own pocket, plus 18% per annum interest.
 
 This post covers when GST kicks in for creators, how the export-of-services rule turns AdSense from a tax burden into a refund, and what an invoice has to look like after registration.
@@ -133,6 +135,12 @@ The downside of voluntary registration: you're now in the monthly-filing system.
 Every invoice is generated with the correct GSTIN, SAC code, place-of-supply logic (CGST/SGST vs IGST), and TDS line item. The monthly GSTR-1 export drops a CSV ready to upload to the GST portal — no manual reconciliation. AdSense and other foreign income gets auto-tagged as zero-rated export, so the LUT-based refund claim is one report away.
 
 If GST registration is in your near future, the compliance overhead is what makes most creators dread it. [The app handles the bookkeeping](https://creatorkhata.com) — you handle the content.
+
+## Tools that help with this
+
+- **[CreatorKhata](https://creatorkhata.com/?utm_source=blog&utm_medium=affiliate&utm_campaign=gst-for-indian-creators)** — Generate GST-compliant invoices in seconds, track every brand deal, export ready-for-CA reports
+- **[Razorpay](https://rzp.io/rzp/9qjLNw9k?utm_campaign=gst-for-indian-creators)** — Accept brand-deal payments with auto-generated GST invoices and UPI/card/international support
+- **[Tax & business books on Amazon India](https://www.amazon.in/s?k=indian+tax+freelancer+book&tag=creatorkhata2-21&utm_campaign=gst-for-indian-creators)** — Reference books on Indian taxation, freelancer compliance, and small-business law
 
 ---
 
