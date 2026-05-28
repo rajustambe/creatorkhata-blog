@@ -92,6 +92,8 @@ The Payment Tracker feature in CreatorKhata lets you log a barter deal at MRP al
 ## Tools that help with this
 
 - **[CreatorKhata](https://creatorkhata.com/?utm_source=blog&utm_medium=affiliate&utm_campaign=barter-vs-cash-brand-deal-ratio)** — All-in-one business app for Indian creators — invoices, brand-deal contracts, payment tracking, GST & TDS-ready
+- **[Creator gear on Amazon India](https://www.amazon.in/s?k=youtuber+kit&tag=creatorkhata2-21&utm_campaign=barter-vs-cash-brand-deal-ratio)** — Cameras, mics, lighting, and accessories for content creators
+- **[Razorpay](https://rzp.io/rzp/9qjLNw9k?utm_campaign=barter-vs-cash-brand-deal-ratio)** — Indian payment gateway — accept brand-deal payments, UPI, cards, international
 
 ## A note on accuracy
 This is general guidance. For your specific situation, consult a chartered accountant.
