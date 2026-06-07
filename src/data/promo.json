@@ -1,0 +1,68 @@
+{
+  "variants": [
+    {
+      "id": "missed_deals-seed",
+      "angle": "missed_deals",
+      "banner": "Brand deals living in your DMs and notes app? That's money slipping away.",
+      "heading": "Stop losing deals you already closed.",
+      "body": "When pitches, contracts and invoices are spread across five apps, deals fall through. CreatorKhata keeps every brand deal in one pipeline — pitch to payment.",
+      "cta_label": "Try CreatorKhata free →"
+    },
+    {
+      "id": "unpaid_invoices-seed",
+      "angle": "unpaid_invoices",
+      "banner": "Done with the deal but still chasing the payment? Let the invoice chase for you.",
+      "heading": "The deal isn't done until you're paid.",
+      "body": "Send GST-ready invoices and track every payment in one place. CreatorKhata flags what's overdue so you stop doing follow-up math in your head.",
+      "cta_label": "Send your first invoice free →"
+    },
+    {
+      "id": "rate_setting-seed",
+      "angle": "rate_setting",
+      "banner": "Still guessing what to charge brands? You're probably undercharging.",
+      "heading": "Charge what your audience is actually worth.",
+      "body": "Most creators undercharge because they're guessing. CreatorKhata builds a rate card from your real numbers — so your next quote is backed by data, not nerves.",
+      "cta_label": "Build your rate card free →"
+    },
+    {
+      "id": "scattered_tools-seed",
+      "angle": "scattered_tools",
+      "banner": "Notes app, sheets, WhatsApp, email — your brand deal is in five places at once.",
+      "heading": "Your whole brand-deal business, in one place.",
+      "body": "Deals, contracts, invoices, rate cards and payment tracking — all in one app instead of scattered across five. Everything in one khata.",
+      "cta_label": "Get organised free →"
+    },
+    {
+      "id": "contracts-seed",
+      "angle": "contracts",
+      "banner": "A 'yes' in your DMs isn't a contract — and it costs you when the deal changes.",
+      "heading": "Send a real contract, not a handshake.",
+      "body": "Lock the deliverables, timeline and payment terms before you start. CreatorKhata generates a proper creator contract in minutes — no lawyer, no template hunting.",
+      "cta_label": "Create a contract free →"
+    },
+    {
+      "id": "gst_india-seed",
+      "angle": "gst_india",
+      "banner": "GST on a brand deal trips up most Indian creators. It shouldn't.",
+      "heading": "GST-correct invoices, built for India.",
+      "body": "The moment your deals get real, GST shows up. CreatorKhata generates invoices that get the numbers right for Indian creators — so the brand's finance team has nothing to bounce back.",
+      "cta_label": "Make a GST invoice free →"
+    },
+    {
+      "id": "pitch_to_payment-seed",
+      "angle": "pitch_to_payment",
+      "banner": "The deal isn't done when they say yes. It's done when you're paid.",
+      "heading": "From pitch to payment, in one flow.",
+      "body": "Pitch the brand, lock the contract, send the invoice, track the payment — without switching apps once. That single flow is the whole point of CreatorKhata.",
+      "cta_label": "See the full flow free →"
+    },
+    {
+      "id": "ai_features-seed",
+      "angle": "ai_features",
+      "banner": "Staring at a blank caption box again? Let the AI write it for you.",
+      "heading": "AI writes your captions, pitches & posts.",
+      "body": "CreatorKhata's AI drafts your captions, turns one video into 8 ready-to-post formats, and writes your brand-pitch emails — so you create instead of staring at a blank screen.",
+      "cta_label": "Try the AI free →"
+    }
+  ]
+}
