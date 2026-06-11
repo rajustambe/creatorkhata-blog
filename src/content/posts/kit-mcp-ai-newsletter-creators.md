@@ -28,6 +28,20 @@ Most creators treat their newsletter as a chore: write, schedule, forget. The MC
 
 One thing to note: the Kit MCP is available to **paying Kit customers only**. If you're on the free plan, this is a strong reason to upgrade — and if you're not on Kit yet, it's a good reason to start.
 
+## How Kit compares
+
+The clearest way to see why the MCP matters is to put Kit next to the other newsletter platforms creators consider:
+
+| Feature | Kit | Mailchimp | Beehiiv |
+|---|---|---|---|
+| Built specifically for creators | ✅ | ⚠️ business-first | ✅ |
+| **AI access via MCP (read *and* write)** | ✅ **Kit MCP** | ❌ | ❌ |
+| Free plan to start | ✅ | ✅ | ✅ |
+| Visual automations & sequences | ✅ | ✅ | ⚠️ limited |
+| Creator-friendly pricing as you grow | ✅ | ❌ gets pricey | ✅ |
+
+The standout in 2026 is the row in bold: **Kit is the only one of these that lets your AI tool both read *and act on* your account** through the Kit MCP. Most platforms that offer any AI access are read-only — they can analyse but can't *do* anything. Kit lets you go from insight straight to action.
+
 ## Should you use it?
 
 If you're building an audience you want to *own* and monetise independently of YouTube's or Instagram's algorithm, a proper email platform is non-negotiable — and Kit is the one built for creators. The MCP just removes the friction between you and your list.
