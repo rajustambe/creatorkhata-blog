@@ -171,7 +171,7 @@ You can [download a sample invoice from inside the app](https://creatorkhata.com
 
 ## Tools that help with this
 
-- **[CreatorKhata](https://creatorkhata.com/?utm_source=blog&utm_medium=affiliate&utm_campaign=invoice-format-content-creators)** — Skip the template — generate a GST + TDS compliant invoice in 90 seconds. Free during launch promo.
+- **[CreatorKhata](https://creatorkhata.com/?utm_source=blog&utm_medium=affiliate&utm_campaign=invoice-format-content-creators)** — Skip the template — generate a GST + TDS compliant invoice in 90 seconds.
 - **[Razorpay](https://rzp.io/rzp/9qjLNw9k?utm_campaign=invoice-format-content-creators)** — Once your invoice ships, get paid via UPI/card/international with auto-tracked GST receipts
 - **[Tax & business books on Amazon India](https://www.amazon.in/s?k=indian+tax+freelancer+book&tag=creatorkhata2-21&utm_campaign=invoice-format-content-creators)** — Reference books on Indian taxation, freelancer compliance, and small-business law
 
