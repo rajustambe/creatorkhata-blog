@@ -57,11 +57,15 @@ const railUrl = (a: { id: string }) =>
       </div>
     </header>
 
-    <a href={ctaTopUrl} class="cta-banner">
-      <span class="cta-banner-text">
-        🎉 <strong>Launch promo:</strong> all PRO features free for every Indian creator until 22 August 2026. No card needed.
+    <a href={ctaTopUrl} class="about-banner">
+      <span class="about-brand">📘 CreatorKhata</span>
+      <span class="about-tagline">
+        The all-in-one <strong>business app for Indian creators</strong> — GST invoices, brand-deal contracts, payment tracking and rate cards, in one place.
       </span>
-      <span class="cta-banner-action">Try free →</span>
+      <span class="about-cta">
+        <span class="about-action">Try CreatorKhata free →</span>
+        <span class="about-promo">🎉 Free PRO until 22 Aug 2026</span>
+      </span>
     </a>
 
     <div class="post-body">
@@ -72,7 +76,7 @@ const railUrl = (a: { id: string }) =>
       <h3>100% free for every Indian creator until 22 Aug 2026.</h3>
       <p>
         GST-ready invoices, contracts, brand-deal pipeline, payment tracking,
-        rate cards, outreach — every PRO feature unlocked. No card needed.
+        rate cards, outreach — every PRO feature unlocked.
       </p>
       <p style="margin-top:0.75rem;font-size:0.92rem;color:#475569;">
         Bring friends along and keep PRO past August — 3 active referrals = +1 month, 6 = +2, 10 = +3 months free PRO.
@@ -108,32 +112,39 @@ const railUrl = (a: { id: string }) =>
       max-width: 100%; height: auto; display: block;
       margin: 1.75rem auto; border-radius: 10px; border: 1px solid var(--border);
     }
-    .cta-banner {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; flex-wrap: wrap;
+    .about-banner {
+      display: flex; flex-direction: column; gap: 0.5rem;
       margin: 0 0 2rem;
-      padding: 0.85rem 1.1rem;
-      background: linear-gradient(135deg, #fff1f2, #fef3c7);
-      border: 1px solid #fcd34d;
-      border-radius: 12px;
+      padding: 1.1rem 1.25rem;
+      background: linear-gradient(135deg, #eef2ff, #fef3c7);
+      border: 1px solid #c7d2fe;
+      border-radius: 14px;
       text-decoration: none;
       color: #0f172a;
-      font-size: 0.95rem;
-      line-height: 1.45;
+      line-height: 1.5;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    .cta-banner:hover {
+    .about-banner:hover {
       transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(15,23,42,0.08);
+      box-shadow: 0 8px 22px rgba(15,23,42,0.10);
     }
-    .cta-banner-text { flex: 1 1 auto; }
-    .cta-banner-action {
-      font-weight: 700;
-      color: #b45309;
-      white-space: nowrap;
+    .about-brand {
+      font-weight: 800; font-size: 1.05rem; letter-spacing: -0.01em; color: #1e1b4b;
     }
+    .about-tagline { font-size: 0.97rem; color: #1f2937; }
+    .about-cta {
+      display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap;
+      margin-top: 0.35rem;
+    }
+    .about-action {
+      font-weight: 700; color: #fff; background: #4f46e5;
+      padding: 0.5rem 0.95rem; border-radius: 9px; white-space: nowrap; font-size: 0.92rem;
+    }
+    .about-banner:hover .about-action { background: #4338ca; }
+    .about-promo { font-size: 0.85rem; color: #b45309; font-weight: 600; }
     @media (max-width: 540px) {
-      .cta-banner { padding: 0.75rem 0.95rem; font-size: 0.9rem; }
+      .about-banner { padding: 0.95rem 1rem; }
+      .about-action { width: 100%; text-align: center; }
     }
 
     /* Rolling ad rail — ALWAYS visible, never alters the text column.
