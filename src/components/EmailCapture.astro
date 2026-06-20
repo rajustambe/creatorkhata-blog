@@ -4,10 +4,10 @@
 //   variant="inline" → box placed inside a post (after the content)
 // POSTs to the backend /public/subscribe (no auth). The subscriber is emailed
 // "The Indian Creator's Money Checklist". Money never touches this — just an email.
-interface Props { variant?: 'inline' | 'bar'; source?: string; }
+interface Props { variant?: 'inline' | 'bar' | 'slim'; source?: string; }
 const { variant = 'inline', source = 'blog' } = Astro.props;
 ---
-{variant === 'bar' ? (
+{variant === 'bar' && (
   <div class="ek-bar">
     <form class="ek-form" data-source={source}>
       <span class="ek-bar-text">📋 Free: <strong>The Indian Creator's Money Checklist</strong> — TDS, GST &amp; brand-deal basics</span>
@@ -18,7 +18,20 @@ const { variant = 'inline', source = 'blog' } = Astro.props;
       <span class="ek-msg" aria-live="polite"></span>
     </form>
   </div>
-) : (
+)}
+{variant === 'slim' && (
+  <div class="ek-slim">
+    <form class="ek-form" data-source={source}>
+      <span class="ek-slim-text">📋 Free: <strong>The Indian Creator's Money Checklist</strong></span>
+      <span class="ek-slim-fields">
+        <input class="ek-email" type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address" />
+        <button class="ek-btn" type="submit">Send it</button>
+      </span>
+      <span class="ek-msg" aria-live="polite"></span>
+    </form>
+  </div>
+)}
+{variant === 'inline' && (
   <aside class="ek-inline">
     <form class="ek-form" data-source={source}>
       <h3 class="ek-h">📋 Free: The Indian Creator's Money Checklist</h3>
@@ -44,6 +57,18 @@ const { variant = 'inline', source = 'blog' } = Astro.props;
   .ek-bar .ek-btn:hover { background: #156038; }
   .ek-bar .ek-btn:disabled { opacity: 0.6; cursor: default; }
   .ek-bar .ek-msg:not(:empty) { width: 100%; text-align: center; font-size: 0.8rem; color: #fca5a5; }
+
+  /* ── slim inline (compact single row, light) ── */
+  .ek-slim { margin: 1.25rem 0; padding: 0.6rem 0.9rem; border-radius: 12px; background: #eef7f2; border: 1px solid #c9e6d6; }
+  .ek-slim .ek-form { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem 0.85rem; }
+  .ek-slim-text { font-size: 0.9rem; }
+  .ek-slim-text strong { color: #156038; }
+  .ek-slim-fields { display: flex; gap: 0.4rem; margin-left: auto; }
+  .ek-slim .ek-email { padding: 0.45rem 0.65rem; border-radius: 8px; border: 1px solid #c9e6d6; font-size: 0.88rem; font-family: inherit; min-width: 170px; }
+  .ek-slim .ek-btn { padding: 0.45rem 0.95rem; border-radius: 8px; border: 0; background: #1a7a4a; color: #fff; font-weight: 700; font-size: 0.88rem; cursor: pointer; }
+  .ek-slim .ek-btn:hover { background: #156038; }
+  .ek-slim .ek-btn:disabled { opacity: 0.6; cursor: default; }
+  .ek-slim .ek-msg:not(:empty) { width: 100%; font-size: 0.8rem; color: #b91c1c; }
 
   /* ── inline box ── */
   .ek-inline { margin: 2.5rem 0; padding: 1.5rem; border-radius: 16px; background: #eef7f2; border: 1px solid #c9e6d6; }
