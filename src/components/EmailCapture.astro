@@ -1,0 +1,89 @@
+---
+// Email capture for the blog. Two variants:
+//   variant="bar"    → slim sticky top bar (always visible, even if readers leave early)
+//   variant="inline" → box placed inside a post (after the content)
+// POSTs to the backend /public/subscribe (no auth). The subscriber is emailed
+// "The Indian Creator's Money Checklist". Money never touches this — just an email.
+interface Props { variant?: 'inline' | 'bar'; source?: string; }
+const { variant = 'inline', source = 'blog' } = Astro.props;
+---
+{variant === 'bar' ? (
+  <div class="ek-bar">
+    <form class="ek-form" data-source={source}>
+      <span class="ek-bar-text">📋 Free: <strong>The Indian Creator's Money Checklist</strong> — TDS, GST &amp; brand-deal basics</span>
+      <span class="ek-bar-fields">
+        <input class="ek-email" type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address" />
+        <button class="ek-btn" type="submit">Send it</button>
+      </span>
+      <span class="ek-msg" aria-live="polite"></span>
+    </form>
+  </div>
+) : (
+  <aside class="ek-inline">
+    <form class="ek-form" data-source={source}>
+      <h3 class="ek-h">📋 Free: The Indian Creator's Money Checklist</h3>
+      <p class="ek-p">TDS, GST, invoices &amp; brand-deal basics — the money stuff creators get wrong, in one short email. No spam, unsubscribe anytime.</p>
+      <div class="ek-row">
+        <input class="ek-email" type="email" name="email" placeholder="you@email.com" required autocomplete="email" aria-label="Email address" />
+        <button class="ek-btn" type="submit">Send me the checklist</button>
+      </div>
+      <span class="ek-msg" aria-live="polite"></span>
+    </form>
+  </aside>
+)}
+
+<style>
+  /* ── sticky top bar ── */
+  .ek-bar { position: sticky; top: 0; z-index: 60; background: #0f1117; color: #fff; padding: 0.5rem 1rem; }
+  .ek-bar .ek-form { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem 1rem; }
+  .ek-bar-text { font-size: 0.9rem; }
+  .ek-bar-text strong { color: #7ee0a8; }
+  .ek-bar-fields { display: flex; gap: 0.4rem; }
+  .ek-bar .ek-email { padding: 0.4rem 0.6rem; border-radius: 8px; border: 1px solid #2a2f3a; background: #1a1f29; color: #fff; font-size: 0.85rem; min-width: 170px; }
+  .ek-bar .ek-btn { padding: 0.4rem 0.9rem; border-radius: 8px; border: 0; background: #1a7a4a; color: #fff; font-weight: 700; font-size: 0.85rem; cursor: pointer; }
+  .ek-bar .ek-btn:hover { background: #156038; }
+  .ek-bar .ek-btn:disabled { opacity: 0.6; cursor: default; }
+  .ek-bar .ek-msg:not(:empty) { width: 100%; text-align: center; font-size: 0.8rem; color: #fca5a5; }
+
+  /* ── inline box ── */
+  .ek-inline { margin: 2.5rem 0; padding: 1.5rem; border-radius: 16px; background: #eef7f2; border: 1px solid #c9e6d6; }
+  .ek-inline .ek-h { margin: 0 0 0.4rem; font-size: 1.2rem; }
+  .ek-inline .ek-p { margin: 0 0 1rem; color: #1f2330; font-size: 0.97rem; }
+  .ek-row { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .ek-inline .ek-email { flex: 1 1 220px; padding: 0.7rem 0.9rem; border-radius: 10px; border: 1px solid #c9e6d6; font-size: 0.95rem; font-family: inherit; }
+  .ek-inline .ek-btn { padding: 0.7rem 1.2rem; border-radius: 10px; border: 0; background: #1a7a4a; color: #fff; font-weight: 700; font-size: 0.95rem; cursor: pointer; }
+  .ek-inline .ek-btn:hover { background: #156038; }
+  .ek-inline .ek-btn:disabled { opacity: 0.6; cursor: default; }
+  .ek-inline .ek-msg:not(:empty) { display: block; margin-top: 0.6rem; font-size: 0.85rem; color: #b91c1c; }
+</style>
+
+<script>
+  const API = (import.meta.env.PUBLIC_API_URL ?? 'https://creatorkhata-backend.onrender.com').replace(/\/+$/, '');
+  document.querySelectorAll('.ek-form').forEach((form) => {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const f = e.currentTarget as HTMLFormElement;
+      const input = f.querySelector('.ek-email') as HTMLInputElement | null;
+      const btn = f.querySelector('.ek-btn') as HTMLButtonElement | null;
+      const msg = f.querySelector('.ek-msg') as HTMLElement | null;
+      const email = (input?.value || '').trim();
+      if (!email || !btn) return;
+      const original = btn.textContent;
+      btn.disabled = true; btn.textContent = 'Sending…'; if (msg) msg.textContent = '';
+      try {
+        const res = await fetch(API + '/public/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, source: f.dataset.source || 'blog' }),
+        });
+        if (res.ok) {
+          f.innerHTML = '<p style="margin:0;color:#156038;font-weight:600">✅ Check your inbox — your checklist is on the way!</p>';
+        } else {
+          btn.disabled = false; btn.textContent = original; if (msg) msg.textContent = "That didn't work — try again?";
+        }
+      } catch (err) {
+        btn.disabled = false; btn.textContent = original; if (msg) msg.textContent = 'Network issue — please try again.';
+      }
+    });
+  });
+</script>
