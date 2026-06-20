@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import EmailCapture from '../components/EmailCapture.astro';
 import promo from '../data/promo.json';
 
 export async function getStaticPaths() {
@@ -41,6 +42,8 @@ const railUrl = (a: { id: string }) =>
 >
   <div class="post-layout">
   <article class="post">
+    <EmailCapture variant="slim" source={post.slug} />
+
     <header class="post-header">
       {post.data.tags[0] && <span class="tag">{post.data.tags[0]}</span>}
       <h1>{post.data.title}</h1>
@@ -70,6 +73,8 @@ const railUrl = (a: { id: string }) =>
     <div class="post-body">
       <Content />
     </div>
+
+    <EmailCapture variant="inline" source={post.slug} />
 
     <aside class="cta-card">
       <h3>100% free for every Indian creator until 22 Aug 2026.</h3>
