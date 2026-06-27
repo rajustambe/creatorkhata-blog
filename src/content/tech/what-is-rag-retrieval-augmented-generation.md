@@ -1,5 +1,5 @@
 ---
-title: "Unlocking what is rag: Retrieval-Augmented Generation Explained Without the Jargon"
+title: "What Is RAG? Retrieval-Augmented Generation Explained Without the Jargon"
 description: "Discover how RAG improves LLM accuracy by looking up information before answering, reducing hallucination and increasing reliability"
 pubDate: 2026-06-27
 tags: ["RAG", "LLM", "Retrieval-Augmented Generation", "Artificial Intelligence"]
