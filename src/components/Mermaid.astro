@@ -1,0 +1,55 @@
+---
+// Client-side Mermaid renderer. The remark plugin (src/lib/remark-mermaid.mjs)
+// emits <pre class="mermaid">…source…</pre>; this turns each into an SVG.
+//
+// Validate-or-hide: every diagram is parsed first, and any block with invalid
+// syntax (e.g. a model that wrote slightly malformed Mermaid) is hidden rather
+// than shown as an ugly error box. So a bad diagram simply doesn't appear —
+// the rest of the post is unaffected.
+---
+<script>
+  const blocks = Array.from(document.querySelectorAll('pre.mermaid'));
+  if (blocks.length) {
+    // Dynamic import: the (large) mermaid bundle only loads on pages that
+    // actually contain a diagram, not on every post page.
+    const { default: mermaid } = await import('mermaid');
+    mermaid.initialize({
+      startOnLoad: false,
+      theme: 'base',
+      fontFamily: "'DM Sans', system-ui, sans-serif",
+      themeVariables: {
+        primaryColor: '#eef7f2',
+        primaryBorderColor: '#1a7a4a',
+        primaryTextColor: '#0f1117',
+        secondaryColor: '#f1f3f6',
+        lineColor: '#6b7280',
+        fontSize: '15px',
+      },
+    });
+
+    await Promise.all(blocks.map(async (el, i) => {
+      const src = (el.textContent || '').trim();
+      if (!src) { el.style.display = 'none'; return; }
+      try {
+        await mermaid.parse(src);                       // throws on bad syntax
+        const { svg } = await mermaid.render(`mmd-${i}`, src);
+        el.innerHTML = svg;
+        el.classList.add('is-rendered');
+      } catch {
+        el.style.display = 'none';                      // validate-or-hide
+      }
+    }));
+  }
+</script>
+
+<style is:global>
+  /* Keep the raw Mermaid source invisible until it is replaced by SVG, so
+     readers never see a flash of diagram code. */
+  pre.mermaid {
+    background: transparent; border: 0; padding: 0; margin: 1.75rem 0;
+    text-align: center; overflow-x: auto;
+    color: transparent; font-size: 0; line-height: 0;
+  }
+  pre.mermaid.is-rendered { color: inherit; font-size: inherit; line-height: inherit; }
+  pre.mermaid svg { max-width: 100%; height: auto; }
+</style>

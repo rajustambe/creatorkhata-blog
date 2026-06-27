@@ -24,6 +24,16 @@ Another analogy to understand RAG is to think of it as a librarian who, when ask
 To further illustrate this concept, consider a second example. Imagine you're a student working on a research paper, and you need to find information about a specific historical event. You would likely start by searching through a database of academic articles and books to find relevant information. You might also use online resources, such as encyclopedias or historical websites, to gather more information. RAG works in a similar way, using a database of documents to find relevant information and generate a response.
 
 ## How RAG Works
+
+```mermaid
+flowchart LR
+  Q[Your question] --> R[Retrieve relevant documents]
+  K[(Knowledge base)] --> R
+  R --> A[Add documents to the prompt]
+  A --> G[LLM generates answer]
+  G --> O[Grounded response]
+```
+
 RAG is based on the idea that an LLM should be able to look up information before generating a response. This is done through a process called embed-store-retrieve. First, relevant documents are embedded into a vector space, which is a way of representing text as a set of numbers that can be used by a computer. These embedded documents are then stored in a database. When an LLM is asked a question, it uses the embedded documents to retrieve the most relevant information. This information is then used to generate a response.
 
 For example, consider a question about the history of a specific country. An LLM using RAG would first embed relevant documents about the country's history into a vector space. These documents could include historical texts, academic articles, and other relevant sources. The LLM would then store these embedded documents in a database. When asked a question about the country's history, the LLM would use the embedded documents to retrieve the most relevant information and generate a response.

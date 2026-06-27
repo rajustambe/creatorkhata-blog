@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Mermaid from '../../components/Mermaid.astro';
 import techAds from '../../data/tech-ads.json';
 
 export async function getStaticPaths() {
@@ -51,6 +52,7 @@ const adSlots = (techAds.slots ?? []) as Array<{ id: string; heading: string; bo
     <div class="post-body">
       <Content />
     </div>
+    <Mermaid />
 
     {/* ── Ad / affiliate slot (dormant until tech-ads.json has entries) ── */}
     {adSlots.length > 0 && (

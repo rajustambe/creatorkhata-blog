@@ -40,6 +40,14 @@ You do not need maths to understand the pipeline. There are three stages:
 
 The result is a single file of numbers — the trained model — that can be loaded and run to answer questions. Running it to get answers is called **inference**, and it is far cheaper than the original training.
 
+```mermaid
+flowchart LR
+  A[Huge text corpus] --> B[Train: predict the next word]
+  B --> C[Fine-tune with human feedback]
+  C --> D[Trained model file]
+  D --> E[Inference: answer your question]
+```
+
 ## Tokens and parameters: the two numbers people quote
 
 Two bits of jargon come up constantly, so they are worth pinning down.

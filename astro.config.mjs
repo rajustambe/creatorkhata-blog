@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import remarkMermaid from './src/lib/remark-mermaid.mjs';
 
 // Multi-zone setup: this Astro app is mounted at /blog under creatorkhata.com
 // via a Vercel rewrite on the React frontend project. `base` ensures every
@@ -11,6 +12,9 @@ export default defineConfig({
   base: '/blog',
   trailingSlash: 'never',
   integrations: [sitemap()],
+  markdown: {
+    remarkPlugins: [remarkMermaid],
+  },
   build: {
     format: 'directory',
   },
