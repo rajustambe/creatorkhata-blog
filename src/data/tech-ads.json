@@ -1,0 +1,4 @@
+{
+  "_comment": "Ad / affiliate slots for the Technology track (/blog/tech). Empty = nothing renders. Add items to monetize later. Each item: { id, heading, body?, href, img? }. img is a path under public/ (e.g. /tech-ads/foo.png) or an absolute URL. href should be the affiliate/destination link.",
+  "slots": []
+}

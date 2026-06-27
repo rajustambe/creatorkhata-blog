@@ -1,0 +1,116 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import techAds from '../../data/tech-ads.json';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('tech', ({ data }) => !data.draft);
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props { post: CollectionEntry<'tech'> }
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+const base = import.meta.env.BASE_URL;
+const dateFmt = (d: Date) =>
+  d.toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' });
+
+// Ad / affiliate slots — empty by default (see src/data/tech-ads.json).
+// The Technology track is deliberately free of the creator-finance CTAs; this
+// is the only monetization surface and it stays dormant until slots are added.
+const adSlots = (techAds.slots ?? []) as Array<{ id: string; heading: string; body?: string; href: string; img?: string }>;
+---
+<BaseLayout
+  section="tech"
+  title={`${post.data.title} — CreatorKhata Tech`}
+  description={post.data.description}
+  ogImage={post.data.ogImage}
+>
+  <div class="post-layout">
+  <article class="post">
+    <header class="post-header">
+      {post.data.tags[0] && <span class="tag">{post.data.tags[0]}</span>}
+      <h1>{post.data.title}</h1>
+      <div class="post-meta">
+        <span>{dateFmt(post.data.pubDate)}</span>
+        <span class="dot">·</span>
+        <span>{post.data.author}</span>
+        {post.data.updatedDate && (
+          <>
+            <span class="dot">·</span>
+            <span>Updated {dateFmt(post.data.updatedDate)}</span>
+          </>
+        )}
+      </div>
+    </header>
+
+    <div class="post-body">
+      <Content />
+    </div>
+
+    {/* ── Ad / affiliate slot (dormant until tech-ads.json has entries) ── */}
+    {adSlots.length > 0 && (
+      <aside class="tech-ads" aria-label="Sponsored">
+        <span class="tech-ads-label">Sponsored</span>
+        {adSlots.map(ad => (
+          <a class="tech-ad" href={ad.href} target="_blank" rel="sponsored noopener">
+            {ad.img && <img src={ad.img} alt={ad.heading} loading="lazy" />}
+            <span class="tech-ad-text">
+              <strong>{ad.heading}</strong>
+              {ad.body && <span>{ad.body}</span>}
+            </span>
+          </a>
+        ))}
+      </aside>
+    )}
+
+    <nav class="tech-foot" aria-label="More from CreatorKhata">
+      <a href={`${base}/tech`}>← All tech articles</a>
+      <a href={base}>Creator finance &amp; business guides →</a>
+    </nav>
+  </article>
+  </div>
+
+  <style>
+    .post-header { margin-bottom: 1.5rem; }
+    .post-header .tag { margin-bottom: 0.75rem; }
+    .post-body :global(p:first-of-type) { font-size: 1.1rem; color: #1f2330; }
+    .post-body :global(img) {
+      max-width: 100%; height: auto; display: block;
+      margin: 1.75rem auto; border-radius: 10px; border: 1px solid var(--border);
+    }
+    .post-body :global(pre) {
+      background: #0f1117; color: #e5e7eb; padding: 1rem 1.1rem;
+      border-radius: 10px; overflow-x: auto; margin: 1.25rem 0; font-size: 0.88rem;
+    }
+    .post-body :global(pre code) { background: none; padding: 0; color: inherit; }
+
+    .tech-ads { margin: 2.5rem 0; display: flex; flex-direction: column; gap: 0.75rem; }
+    .tech-ads-label {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: #9ca3af;
+    }
+    .tech-ad {
+      display: flex; gap: 0.9rem; align-items: center; text-decoration: none;
+      color: inherit; padding: 1rem; border: 1px solid var(--border);
+      border-radius: var(--r-lg); background: white; transition: box-shadow 0.15s;
+    }
+    .tech-ad:hover { box-shadow: 0 6px 20px rgba(15,23,42,0.08); }
+    .tech-ad img { width: 64px; height: 64px; border-radius: 10px; object-fit: cover; }
+    .tech-ad-text { display: flex; flex-direction: column; gap: 0.2rem; }
+    .tech-ad-text strong { color: var(--ink); }
+    .tech-ad-text span { color: var(--muted); font-size: 0.9rem; }
+
+    .tech-foot {
+      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;
+      margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+      font-size: 0.92rem;
+    }
+    .tech-foot a { color: var(--muted); text-decoration: none; }
+    .tech-foot a:hover { color: var(--green); }
+  </style>
+</BaseLayout>

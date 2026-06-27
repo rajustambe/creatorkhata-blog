@@ -6,9 +6,16 @@ export interface Props {
   description: string;
   ogImage?: string;
   canonical?: string;
+  section?: 'blog' | 'tech';
 }
 
-const { title, description, ogImage, canonical } = Astro.props;
+const { title, description, ogImage, canonical, section = 'blog' } = Astro.props;
+
+const base = import.meta.env.BASE_URL;            // '/blog'
+const blogHome = base;                            // /blog        (creator track)
+const techHome = `${base}/tech`;                  // /blog/tech   (technology track)
+const sectionLabel = section === 'tech' ? 'Tech' : 'Blog';
+const homeHref = section === 'tech' ? techHome : blogHome;
 
 const canonicalURL = canonical
   ? new URL(canonical, Astro.site)
@@ -51,15 +58,16 @@ const ogImageURL = ogImage
   </head>
   <body>
     <header class="site-header">
-      <a href={import.meta.env.BASE_URL} class="brand">
+      <a href={homeHref} class="brand">
         <span class="brand-dot"></span>
         <span class="brand-name">CreatorKhata</span>
         <span class="brand-slash">/</span>
-        <span class="brand-section">Blog</span>
+        <span class="brand-section">{sectionLabel}</span>
       </a>
       <nav class="site-nav">
-        <a href="https://creatorkhata.com/?utm_source=blog&utm_medium=nav">App</a>
-        <a href="https://creatorkhata.com/login?utm_source=blog&utm_medium=nav" class="nav-cta">Sign in</a>
+        <a href={blogHome} class:list={["nav-section", { active: section === 'blog' }]}>Creators</a>
+        <a href={techHome} class:list={["nav-section", { active: section === 'tech' }]}>Tech</a>
+        <a href="https://creatorkhata.com/?utm_source=blog&utm_medium=nav" class="nav-cta">App</a>
       </nav>
     </header>
 
@@ -127,6 +135,12 @@ const ogImageURL = ogImage
       .site-nav { display: flex; gap: 1rem; align-items: center; font-size: 0.92rem; }
       .site-nav a { color: var(--muted); text-decoration: none; font-weight: 500; }
       .site-nav a:hover { color: var(--ink); }
+      .site-nav .nav-section { position: relative; }
+      .site-nav .nav-section.active { color: var(--green); font-weight: 600; }
+      .site-nav .nav-section.active::after {
+        content: ""; position: absolute; left: 0; right: 0; bottom: -4px;
+        height: 2px; background: var(--green); border-radius: 2px;
+      }
       .site-nav .nav-cta {
         background: var(--ink); color: white; padding: 0.5rem 0.95rem;
         border-radius: var(--r-md);

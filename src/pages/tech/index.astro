@@ -1,0 +1,70 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const allPosts = (await getCollection('tech', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const base = import.meta.env.BASE_URL;
+const dateFmt = (d: Date) =>
+  d.toLocaleDateString('en-IN', { year: 'numeric', month: 'short', day: 'numeric' });
+---
+<BaseLayout
+  section="tech"
+  title="CreatorKhata Tech — AI, Tools & Technology, Explained Simply"
+  description="Plain-English guides on AI, large language models, and the tools changing how people work and create. No hype, no jargon — just clear explanations."
+>
+  <section class="hero">
+    <h1>CreatorKhata Tech.</h1>
+    <p class="hero-sub">
+      AI, large language models and the tools reshaping how we work — explained
+      in plain English. No hype, no jargon, just clear answers.
+    </p>
+  </section>
+
+  <section class="post-list">
+    {allPosts.length === 0 && (
+      <p class="empty">New tech &amp; AI guides are on the way — check back soon.</p>
+    )}
+    {allPosts.map(post => (
+      <article class="post-card">
+        <a href={`${base}/tech/${post.slug}`} class="post-card-link">
+          <h2>{post.data.title}</h2>
+          <p>{post.data.description}</p>
+          <div class="post-card-meta">
+            <span>{dateFmt(post.data.pubDate)}</span>
+            <span class="dot">·</span>
+            <span>{post.data.tags[0] ?? 'Tech'}</span>
+          </div>
+        </a>
+      </article>
+    ))}
+  </section>
+
+  <style>
+    .hero { padding: 1.5rem 0 0.5rem; }
+    .hero-sub {
+      color: var(--muted); font-size: 1.05rem; max-width: 600px;
+      margin-top: 0.75rem;
+    }
+    .post-list { margin-top: 2rem; }
+    .empty { color: var(--muted); }
+    .post-card {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 0;
+    }
+    .post-card:last-child { border-bottom: 1px solid var(--border); }
+    .post-card-link { display: block; text-decoration: none; color: inherit; }
+    .post-card h2 {
+      font-size: 1.35rem; margin: 0 0 0.4rem; color: var(--ink);
+      transition: color 0.15s;
+    }
+    .post-card-link:hover h2 { color: var(--green); }
+    .post-card p { color: var(--muted); margin-bottom: 0.5rem; }
+    .post-card-meta {
+      display: flex; gap: 0.5rem; color: var(--subtle);
+      font-size: 0.85rem;
+    }
+    .post-card-meta .dot { color: var(--subtle); }
+  </style>
+</BaseLayout>
