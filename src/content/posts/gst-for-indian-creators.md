@@ -32,6 +32,11 @@ This post covers when GST kicks in for creators, how the export-of-services rule
 
 You **must** register for GST once your aggregate turnover in a financial year crosses:
 
+```mermaid
+flowchart LR; A[Aggregate Turnover] -->|Crosses ₹20L| B[Register for GST]; B -->|Within 30 days| C[Charge GST on Invoices]; C -->|Monthly| D[File Returns]
+```
+
+
 - **₹20 lakh** — for most Indian states
 - **₹10 lakh** — for special-category states (Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim, Tripura, Uttarakhand, Himachal Pradesh, J&K)
 

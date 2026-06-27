@@ -24,6 +24,11 @@ Let's say you're a beauty YouTuber, and you receive Rs 20,000 worth of free prod
 ## Understanding barter deals
 Barter deals can be a great way to receive products or services from brands, without having to pay for them upfront. However, it's essential to understand the tax implications of barter deals. If you're receiving products or services worth less than Rs 20,000, there's no tax implication. However, if the value of the products or services exceeds Rs 20,000, you need to declare it as taxable income in your ITR. For example, if you're a fashion influencer, and you receive Rs 50,000 worth of clothing from a brand, you need to declare the full amount as taxable income.
 
+```mermaid
+flowchart LR; A[Barter Deal] -->|Value under 20k| B[No Tax]; A -->|Value above 20k| C[Declare as Taxable Income]; C -->|File ITR| D[Pay Tax]
+```
+
+
 Here's another example: let's say you're a food blogger, and you receive Rs 15,000 worth of kitchen appliances from a brand. Since the value is below Rs 20,000, you don't need to declare it as taxable income. However, if you receive an additional Rs 10,000 worth of appliances, the total value would be Rs 25,000, which exceeds the Rs 20,000 threshold. In this case, you would need to declare the full Rs 25,000 as taxable income.
 
 To illustrate this further, consider the following table:

@@ -29,6 +29,11 @@ Another example is a beauty creator with an average of 20,000 views per post. Th
 ## Understanding the CPV method
 CPV (cost per view) is not a formula you compute from engagement — it's the **unit price you charge per view of your content**. The industry CPV ranges by niche above tell you what the Indian market currently pays. Your job is to pick a band that matches your niche, then multiply by your average views per post to arrive at a deal price.
 
+```mermaid
+flowchart LR; A[Calculate average views] -->|divide by 10| B[Find niche band]; B -->|match niche| C[Position in band]; C -->|consider engagement| D[Multiply to get price]; D{CPV x Average views} -->|result| E[Final price]
+```
+
+
 The actual pricing formula is straightforward:
 
 **Price = CPV × Average views per post**

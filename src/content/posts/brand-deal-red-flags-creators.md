@@ -27,6 +27,11 @@ You're about to sign a contract with a brand, and they're offering you a deal th
 ## Understanding Revenue Share Models
 Revenue share models can be tempting, especially if you're just starting out. However, they can be problematic if you're not careful. You need to make sure you understand how the revenue will be split, and what you need to do to get paid. For example, let's say you create a video for a brand, and they offer you a 20% revenue share. If the video makes Rs 1,00,000, you'll get Rs 20,000. However, if the video only makes Rs 10,000, you'll only get Rs 2,000. You need to consider whether this is a fair deal for you.
 
+```mermaid
+flowchart LR; A[Start] --> B[Clearly outline revenue share percentage]; B --> C[Define payment terms]; C --> D[Establish minimum guarantee]; D --> E[Monitor revenue]; E --> F[Get paid fairly]
+```
+
+
 Here's another example: let's say you're creating a series of videos for a brand, and they offer you a 30% revenue share. If the series makes Rs 5,00,000, you'll get Rs 1,50,000. However, if the series only makes Rs 2,00,000, you'll only get Rs 60,000. You need to consider whether this is a fair deal for you, and whether you're willing to take the risk.
 
 To navigate revenue share models, follow these steps:

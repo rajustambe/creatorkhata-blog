@@ -20,6 +20,11 @@ As a creator and freelancer hybrid, you're not alone. Many Indians are now pursu
 | Freelancer Income | Business/Professional Income under ITR-3 or Presumptive Section 44ADA | Taxable Services, 18% GST |
 | Same PAN | Single ITR Form, either ITR-3 or ITR-4 | Aggregate Turnover for GST Registration |
 
+```mermaid
+flowchart LR; A[ITR Filing] -->|ITR-3 or ITR-4| B[Business/Professional Income]; B -->|Presumptive Section 44ADA| C[Deemed Profit]; C -->|Deductions and Credits| D[Tax Liability]; D -->|GST Registration| E[Aggregate Turnover]
+```
+
+
 ## Understanding Creator Income
 As a YouTube creator, your AdSense income is considered business/professional income under the Income-tax Act. You can report this income under either ITR-3 or Presumptive Section 44ADA, depending on your turnover and profit. For example, if your annual AdSense income is Rs 24,00,000, you can report it under Presumptive Section 44ADA, with a deemed profit of 50% (Rs 12,00,000). You can then claim deductions and credits on this income, such as rent, utilities, and equipment expenses.
 

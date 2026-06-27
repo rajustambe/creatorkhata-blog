@@ -27,6 +27,11 @@ Let's consider another example: suppose you receive a payment of Rs 2.5 lakh fro
 ## Understanding UPI Limits
 UPI has become a popular payment method in India, with instant transfers and low fees. However, there are daily transaction limits to consider. The default limit is Rs 1 lakh per day, but you can increase this limit to Rs 5 lakh for tax or insurance payments. If you receive multiple brand deal payments in a day, you might exceed the default limit. To avoid this, you can either increase your UPI limit or opt for a bank transfer. Here's a step-by-step procedure to increase your UPI limit:
 
+```mermaid
+flowchart LR; A[Receive Payment] -->|Under 1 lakh| B[Use UPI]; A -->|Above 1 lakh| C[Increase UPI Limit or Bank Transfer]; B --> D[Instant Payment]; C --> E[Increase Limit]; C --> F[Choose Bank Transfer]; E --> D; F --> G[Wait for Payment]
+```
+
+
 1. Log in to your UPI-enabled bank account or mobile wallet.
 2. Navigate to the settings or limits section.
 3. Look for the option to increase your daily transaction limit.

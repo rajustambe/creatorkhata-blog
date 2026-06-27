@@ -25,6 +25,11 @@ You're not alone in this struggle. Many Indian content creators face the same is
 ## Understanding the MSME Act
 The MSME Act is a law that protects the interests of micro, small, and medium enterprises in India. It provides various benefits, including easy access to credit, tax benefits, and protection against unpaid invoices. As a content creator, you can register under the Udyam scheme and avail these benefits. The MSME Act also provides a framework for dispute resolution, which can help you recover your unpaid invoices.
 
+```mermaid
+flowchart LR; A[Unpaid Invoice] -->|45 days| B[Eligible for Interest]; B -->|CA-stamped Notice| C[File Complaint on Samadhaan Portal]; C -->|18% Interest| D[Recover Unpaid Invoice]
+```
+
+
 To be eligible for the benefits under the MSME Act, you need to meet certain criteria, such as having a valid Udyam registration and a turnover of less than Rs 250 crores. You can check the official website of the Ministry of Micro, Small and Medium Enterprises to see if you're eligible.
 
 Here are the steps to check your eligibility:

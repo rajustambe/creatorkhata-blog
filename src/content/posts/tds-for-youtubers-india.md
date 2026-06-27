@@ -48,6 +48,11 @@ TDS is **income tax paid in advance, on your behalf, by whoever is paying you.**
 
 When a brand pays a YouTuber for a sponsored video, an Instagram reel, a product placement, or any kind of paid promotion, the income tax department treats it as **professional services** under Section 194J of the Income Tax Act. The brand must:
 
+```mermaid
+flowchart LR; A[Brand Deal] -->|10% TDS| B[TDS Deduction]; B -->|Deposit to Govt| C[Form 16A]; C -->|Claim at ITR| D[Refund]
+```
+
+
 1. Deduct **10% TDS** before paying you.
 2. Deposit the deducted amount to the government within 7 days of the following month.
 3. Issue you a **Form 16A** (TDS certificate) every quarter.

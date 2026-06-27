@@ -29,6 +29,11 @@ Per-platform pricing means charging different rates for different social media p
 3. Audience engagement and reach
 4. Brand requirements and expectations
 
+```mermaid
+flowchart LR; A[Research audience] -->|target audience| B[Analyze production time]; B -->|production time| C[Set pricing tiers]; C -->|pricing tiers| D[Determine per-platform pricing]
+```
+
+
 Let's consider another example. Suppose you're creating content for TikTok, and you charge Rs 20,000 for a TikTok video. However, you also create content for Facebook, and you charge Rs 30,000 for a Facebook post. This is an example of per-platform pricing, where you're charging different rates for different platforms.
 
 To determine your per-platform pricing, follow these steps:

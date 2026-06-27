@@ -25,6 +25,11 @@ You've worked hard to build your audience and create engaging content, and now i
 ## Understanding usage period
 The usage period clause specifies the duration for which the brand can use your content. This could be anything from a few months to a year or more. As a creator, you need to ensure that the usage period is clearly defined to avoid any disputes. For example, if you're creating a video for a brand, you might want to limit the usage period to 6 months. After that, the brand would need to obtain your permission to continue using the content. Let's say you're paid ₹20,000 for the video, and the brand wants to use it for a year. You could negotiate a usage period of 6 months, with an additional ₹10,000 for each subsequent 6 months.
 
+```mermaid
+flowchart LR; A[Determine content type] --> B[Research industry standards]; B --> C[Calculate costs]; C --> D[Negotiate usage period]; D --> E[Define usage period in contract]
+```
+
+
 To further illustrate this, consider a scenario where you're creating a series of social media posts for a brand. You might want to limit the usage period to 3 months, with an option to renew for an additional ₹5,000. This would ensure that the brand doesn't overuse your content and that you're fairly compensated for your work.
 
 Here's a step-by-step procedure to negotiate a usage period clause:

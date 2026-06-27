@@ -26,6 +26,11 @@ Let's take an example to illustrate the importance of choosing the right CA. Sup
 ## Understanding your tax needs
 As a creator, your tax needs are unique. You have a mix of Indian and foreign income, including AdSense payouts and brand deals. You need a CA who understands how to report this income correctly, including any foreign tax credits you may be eligible for. You also need to consider GST, which applies to services provided in India. If you have a turnover of more than Rs 20 lakh (Rs 10 lakh in special category states), you need to register for GST.
 
+```mermaid
+flowchart LR; A[Determine turnover] -->|above 20 lakh| B[Check GST threshold]; B -->|above threshold| C[Gather documents]; C --> D[Apply for GST registration]; D --> E[Obtain GSTIN]
+```
+
+
 For instance, let's say you have a turnover of Rs 25 lakh from brand deals and you need to register for GST. A good CA can help you with the registration process, file your GST returns, and ensure that you're taking advantage of all the deductions you're eligible for. On the other hand, a bad CA may not even be aware of the GST registration requirement, let alone help you with the process.
 
 Here's a step-by-step procedure to follow when considering GST registration:

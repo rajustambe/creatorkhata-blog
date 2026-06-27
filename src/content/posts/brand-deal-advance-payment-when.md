@@ -25,6 +25,11 @@ You've heard horror stories of creators not getting paid for their work, and you
 ## Understanding the 50% rule for new brands
 When dealing with new brands, it's a good idea to ask for a 50% advance payment. This ensures that you're protected in case the brand doesn't pay the remaining amount. For example, if the deal value is Rs 1 lakh, you can ask for Rs 50,000 as an advance payment. This way, you've already received half of the payment, and you can be more confident that the brand will pay the remaining amount.
 
+```mermaid
+flowchart LR; A[New Brand Deal] -->|50% of deal value| B[Advance Payment]; B -->|Remaining 50%| C[Final Payment]; C --> D[Completed Work]
+```
+
+
 Let's consider another example. Suppose you're signing a brand deal worth Rs 2.5 lakhs for a series of 3 videos. You can ask for Rs 1.25 lakhs as an advance payment, which is 50% of the total deal value. This will give you a sense of security and ensure that you're not left with unpaid work.
 
 To further illustrate this point, here's a step-by-step procedure to follow when asking for a 50% advance payment from a new brand:

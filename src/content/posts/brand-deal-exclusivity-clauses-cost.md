@@ -27,6 +27,11 @@ Here's another example: suppose you're a fitness influencer who earns Rs 30,000 
 In addition to these examples, it's essential to consider the potential risks and benefits of each type of exclusivity clause. For instance, category exclusivity may limit your ability to work with other brands in the same category, but it may also provide a guaranteed stream of income from the brand. On the other hand, full exclusivity may provide a higher rate premium, but it may also limit your ability to work with other brands in all categories.
 To mitigate these risks, you can consider negotiating a tiered exclusivity clause, where the brand pays a higher rate premium for a shorter exclusivity period. For example, you could negotiate a 6-month category exclusivity deal with a 30% rate premium, and then switch to a non-exclusivity deal after the 6-month period.
 
+```mermaid
+flowchart LR; A[Received Brand Deal] -->|With Exclusivity Clause| B{Accept Deal}; B -->|Yes| C[Limit Future Opportunities]; B -->|No| D[Negotiate Better Terms]; C -->|Guaranteed Income| E[Sign Deal]; D -->|More Flexible Terms| E
+```
+
+
 ## Negotiating Exclusivity Clauses
 When negotiating exclusivity clauses, it's essential to understand the terms and conditions. You should ask questions like: What type of exclusivity is being requested? What is the duration of the exclusivity period? Are there any geographic restrictions? What is the rate premium being offered for the exclusivity clause? Here are some tips for negotiating exclusivity clauses:
 1. **Know your worth**: Before negotiating, make sure you know your worth as a content creator. Research your industry standards and know what other creators are charging for similar deals.

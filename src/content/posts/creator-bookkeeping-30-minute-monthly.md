@@ -22,6 +22,11 @@ You might think that bookkeeping is a tedious task that requires a lot of time a
 | Review and plan | Review your finances and plan for the next month | 5 minutes |
 | Backup data | Backup your bookkeeping data to prevent loss | 2 minutes |
 
+```mermaid
+flowchart LR; A[Log deals] --> B[Track TDS and GST]; B --> C[Reconcile accounts]; C --> D[Review and plan]; D --> E[Backup data]
+```
+
+
 ## Logging Deals and Expenses
 To start with bookkeeping, you need to log all your deals and expenses. This includes income from brand deals, AdSense, and affiliate marketing, as well as expenses like equipment, travel, and software. You can use a spreadsheet like Google Sheets or a bookkeeping tool like CreatorKhata to log your deals and expenses. Make sure to include the date, amount, and description of each transaction. For example:
 | Date | Amount | Description |

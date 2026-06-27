@@ -34,6 +34,11 @@ Let's consider another example. Suppose you're a social media influencer, and yo
 ## Understanding the MSME Act 45-day rule
 The MSME Act is a law that protects micro, small, and medium enterprises in India. One of the key provisions of this law is the 45-day rule, which states that all payments to MSMEs must be made within 45 days of the invoice date. This rule applies to all businesses, including brands that work with content creators. As a creator, you can use this rule to negotiate shorter payment terms with brands.
 
+```mermaid
+flowchart LR; A[Check if MSME] -->|Yes| B[Invoice brand]; B --> C[Follow up]; C -->|Paid| D[Receive payment]; C -->|Not paid| E[Charge late fee];
+```
+
+
 To illustrate this, let's consider an example. Suppose you've invoiced a brand for ₹50,000, and the invoice date is 1st January. According to the MSME Act 45-day rule, the brand must pay you within 45 days, i.e., by 15th February. If the brand fails to pay you within this timeframe, you can charge a late fee.
 
 Here's a step-by-step procedure to follow when using the MSME Act 45-day rule:
