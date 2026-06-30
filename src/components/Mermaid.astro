@@ -22,9 +22,12 @@
         primaryBorderColor: '#1a7a4a',
         primaryTextColor: '#0f1117',
         secondaryColor: '#f1f3f6',
-        lineColor: '#6b7280',
-        fontSize: '15px',
+        tertiaryColor: '#ffffff',
+        lineColor: '#1a7a4a',
+        fontSize: '24px',          // was 15px — bumped up for readability
       },
+      // Roomier nodes so labels breathe and the diagram isn't cramped.
+      flowchart: { padding: 18, nodeSpacing: 55, rankSpacing: 62, useMaxWidth: true },
     });
 
     await Promise.all(blocks.map(async (el, i) => {
@@ -50,6 +53,19 @@
     text-align: center; overflow-x: auto;
     color: transparent; font-size: 0; line-height: 0;
   }
-  pre.mermaid.is-rendered { color: inherit; font-size: inherit; line-height: inherit; }
+  /* Once rendered, sit the diagram on its own clean light card so it never
+     inherits a dark page background and always reads with high contrast. */
+  pre.mermaid.is-rendered {
+    color: inherit; font-size: inherit; line-height: inherit;
+    background: #ffffff;
+    border: 1px solid #e3e8ee;
+    border-radius: 14px;
+    padding: 1.5rem 1rem;
+    box-shadow: 0 1px 4px rgba(15, 17, 23, 0.06);
+  }
   pre.mermaid svg { max-width: 100%; height: auto; }
+  /* Keep edge/relationship labels readable on the white card. */
+  pre.mermaid .edgeLabel, pre.mermaid .edgeLabel p {
+    background: #ffffff; color: #0f1117;
+  }
 </style>
