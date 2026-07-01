@@ -85,7 +85,9 @@ const adSlots = (techAds.slots ?? []) as Array<{ id: string; heading: string; bo
       max-width: 100%; height: auto; display: block;
       margin: 1.75rem auto; border-radius: 10px; border: 1px solid var(--border);
     }
-    .post-body :global(pre) {
+    /* Dark styling is for CODE blocks only — exclude Mermaid diagrams, which
+       render inside <pre class="mermaid"> and get their own white card. */
+    .post-body :global(pre:not(.mermaid)) {
       background: #0f1117; color: #e5e7eb; padding: 1rem 1.1rem;
       border-radius: 10px; overflow-x: auto; margin: 1.25rem 0; font-size: 0.88rem;
     }
